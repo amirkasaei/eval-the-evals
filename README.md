@@ -1,9 +1,5 @@
 # Evaluating the Evaluators: Metrics for Compositional Text-to-Image Generation
 
-<p align="center">
-  <img src="./static/images/metric-icon.png" alt="Metric Workshop Icon" width="120"/>
-</p>
-
 ## 📖 Overview
 This repository contains the code and resources for our paper:
 
