@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="CARINOX: Category-Aware Reward-based Initial Noise Optimization and Exploration">
+  <meta name="keywords" content="CARINOX, Text-to-Image, Diffusion, Noise Optimization, Seed Exploration, Reward Models, Inference-Time Scaling">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CARINOX: Category-Aware Reward-based Initial Noise Optimization and Exploration</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" type="image/png" href="./static/images/favicon.png">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <img src="./static/images/carinox-icon-fc.png" 
+                alt="CARINOX Icon" 
+                style="height:60px; vertical-align:middle; margin-right:-15px; margin-top:-10px;">
+            <span style="color:#6C5CE7; font-weight: bold; font-style: italic">CARINOX</span>
+            <br>
+            Category-Aware Reward-based Initial Noise Optimization and Exploration
+            <br>
+            <!-- <span style="font-size: 0.8em; font-weight: normal;"> 
+              Transactions on Machine Learning Research (TMLR) — Under Review 
+            </span> -->
+          </h1>
+
+
+          <div class="is-size-5 publication-authors">
+          <div class="author-row">
+            <span class="author-block"><a href="#">Seyed Amir Kasaei</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="#">Ali Aghayari</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="#">Arash Marioriyad</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="#">Niki Sepasian</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="#">Shayan Baghayi Nejad</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=veo-8swAAAAJ">MohammadAmin Fazli</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=S1U0KlgAAAAJ">Mahdieh Soleymani Baghshah</a><sup>1</sup>,</span>
+            <span class="author-block"><a href="https://scholar.google.com/citations?user=pRyJ6FkAAAAJ">Mohammad Hossein Rohban</a><sup>1</sup></span>
+          </div>
+        </div>
+        <div class="is-size-5 publication-authors">
+          <span class="author-block"><sup>1</sup>Department of Computer Engineering, Sharif University of Technology</span>
+        </div>
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block"><a href="https://arxiv.org/abs/2509.17458" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span></a></span>
+              <span class="link-block"><a href="https://github.com/amirkasaei/carinox" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a></span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h2 class="subtitle has-text-centered">
+          Unifying noise optimization and best-of-N exploration with systematic reward selection for reliable compositional alignment.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <br><br>
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Text-to-image diffusion models, such as Stable Diffusion, can produce high-quality and diverse images but often fail to achieve compositional alignment, particularly when prompts describe complex object relationships, attributes, or spatial arrangements. Recent inference-time approaches address this by optimizing or exploring the initial noise under the guidance of reward functions that score text–image alignment—without requiring model fine-tuning. While promising, each strategy has intrinsic limitations when used alone: optimization can stall due to poor initialization or unfavorable search trajectories, whereas exploration may require a prohibitively large number of samples to locate a satisfactory output. Our analysis further shows that neither single reward metrics nor ad-hoc combinations reliably capture all aspects of compositionality, leading to weak or inconsistent guidance. To overcome these challenges, we present <strong>C</strong>ategory-<strong>A</strong>ware <strong>R</strong>eward-based <strong>I</strong>nitial <strong>N</strong>oise <strong>O</strong>ptimization and E<strong>X</strong>ploration (CARINOX), a unified framework that combines noise optimization and exploration with a principled reward selection procedure grounded in correlation with human judgments. Evaluations on two complementary benchmarks—covering diverse compositional challenges—show that CARINOX raises average alignment scores by +16% on T2I-CompBench++ and +11% on the HRS benchmark, consistently outperforming state-of-the-art optimization and exploration-based methods across all major categories, while preserving image quality and diversity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{kasaei2025carinox,
+      title={CARINOX: Inference-time Scaling with Category-Aware Reward-based Initial Noise Optimization and Exploration}, 
+      author={Seyed Amir Kasaei and Ali Aghayari and Arash Marioriyad and Niki Sepasian and Shayan Baghayi Nejad and MohammadAmin Fazli and Mahdieh Soleymani Baghshah and Mohammad Hossein Rohban},
+      year={2025},
+      eprint={2509.17458},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2509.17458}, 
+}</code></pre>
+  </div>
+</section>
+
+<!-- <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Built with the Bulma template style (inspired by Nerfies/MagicTime). Replace placeholders with your own assets.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer> -->
+
+</body>
+</html>
